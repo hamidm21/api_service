@@ -7,9 +7,12 @@
 
 var app = require('../api_service');
 var debug = require('debug')('goftare:HTTP');
+var kafka_log = require('debug')('goftare:KAFKA');
 var http = require('http');
 require('dotenv').config();
 const config = require('../lib/config/config');
+const { consumer } = require('../lib/utils/kafka');
+const { kafkaInit } = require('../lib/handlers/kafka_handler');
 const pid = process.pid;
 
 /**
@@ -28,12 +31,18 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port , () => {
+server.listen(port , async () => {
   debug(`Started process ${pid}`);
 });
 server.on('error', onError);
 server.on('listening', onListening);
 debug(`server is running on port ${config.PORT}`);
+
+/**
+ * initilizing kafka listener
+ */
+
+kafkaInit();
 
 /**
  * Normalize a port into a number, string, or false.
