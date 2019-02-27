@@ -1,4 +1,4 @@
-const 
+const
 	Chat = require('./Chat'),
 	Room = require('./Room'),
 	User = require('./User'),
