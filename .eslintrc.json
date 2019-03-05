@@ -24,11 +24,11 @@
             "unix"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         "semi": [
-            "warn",
+            "error",
             "always"
         ],
         "no-var": [
