@@ -7,7 +7,7 @@ const
 	morgan = require('morgan'),
 	Init = require('./lib/utils/Init'),
 	Routes = require('./routes/index'),
-	// errorHandler = require('./lib/handlers/error_handler'),
+	errorHandler = require('./lib/handlers/error_handler'),
 	app = express();
 
 // view engine setup
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //application layers
 Init(app);
 Routes(app);
-// errorHandler(app);
+errorHandler(app);
 
 
 module.exports = app;

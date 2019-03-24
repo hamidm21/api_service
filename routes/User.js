@@ -6,4 +6,6 @@ router.post('/extraInfo', controller.extraInfo);
 
 router.post('/getProfile', controller.getProfile);
 
+router.get('/getPsychologistsList', controller.getPsychologistsList);
+
 module.exports = router;
