@@ -1,5 +1,6 @@
 const 
 	express = require('express'),
+	upload = require('multer')({dest: 'public/profilePics'}),
 	path = require('path'),
 	compression = require('compression'),
 	cookieParser = require('cookie-parser'),
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(upload.single('photo'));
 
 //application layers
 Init(app);
