@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const guard = require('../lib/utils/guard');
 const controller = require('../lib/controllers/user_controller');
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -22,13 +23,13 @@ router.get('/getPsychologistsList', controller.getPsychologistsList);
 
 // router.post('saveClipboard', controller.saveClipboard);
 
-router.post('/editUsername', controller.editUsername);
+router.post('/editUsername', guard.userGuard, controller.editUsername);
 
 router.post('/editProfilePicture', upload.single('avatar'), controller.editProfilePicture);
 
 router.post('/editPhoneNumber', controller.editPhoneNumber);
 
-router.post('/editPasssword', controller.editPassword);
+router.post('/editPassword', controller.editPassword);
 
 // router.post('/editSpecificInfo', controller.editSpecificInfo);
 

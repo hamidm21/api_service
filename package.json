@@ -7,7 +7,7 @@
     "test": "jest --verbose",
     "start": "node ./bin/www.js",
     "eslint": "./node_modules/.bin/eslint",
-    "debug": "DEBUG=goftare:* node ./bin/www.js"
+    "debug": "DEBUG=api:* node ./bin/www.js"
   },
   "author": "Hamid <hamidmk2121@gmail.com>",
   "license": "ISC",

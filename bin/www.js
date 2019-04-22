@@ -6,8 +6,8 @@
 
 
 var app = require('../api_service');
-var debug = require('debug')('goftare:HTTP');
-var kafka_log = require('debug')('goftare:KAFKA');
+var debug = require('debug')('api:HTTP');
+var kafka_log = require('debug')('api:KAFKA');
 var http = require('http');
 require('dotenv').config();
 const config = require('../lib/config/config');
