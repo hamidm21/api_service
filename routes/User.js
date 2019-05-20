@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const guard = require('../lib/utils/guard');
+const encryption = require('../lib/utils/encryption');
 const controller = require('../lib/controllers/user_controller');
 const multer = require('multer');
 const storage = multer.diskStorage({
