@@ -8,4 +8,8 @@ router.post('/Login', controller.Login);
 
 router.post('/RefreshToken', controller.refreshToken);
 
+router.post('/sendForgetPassword', controller.sendForgetPassword);
+
+router.post('/setForgetPassword', controller.setForgetPassword);
+
 module.exports = router;
